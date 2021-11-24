@@ -1,0 +1,1 @@
+web: gunicorn gamersforum.wsgi
