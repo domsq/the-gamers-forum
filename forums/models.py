@@ -43,3 +43,34 @@ class Post(models.Model):
     class Meta:
         """Sorts the posts in descending order"""
         ordering = ["-created"]
+
+
+class Reply(models.Model):
+    """Schema for the Reply model"""
+    body = models.TextField()
+    creator = models.ForeignKey(User, on_delete=models.CASCADE,
+                                related_name="user_replies")
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    image = CloudinaryField("image", default="placeholder")
+    upvote = models.ManyToManyField(User, related_name="reply_upvotes",
+                                    blank=True)
+    downvote = models.ManyToManyField(User, related_name="reply_downvotes",
+                                      blank=True)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE,
+                             related_name="post_replies")
+
+    def __str__(self):
+        return f"Reply {self.body} by {self.creator}"
+
+    def number_of_upvotes(self):
+        """Returns number of upvotes as a total"""
+        return self.upvote.count()
+
+    def number_of_downvotes(self):
+        """Returns number of downvotes as a total"""
+        return self.downvote.count()
+
+    class Meta:
+        """Sorts the posts in descending order"""
+        ordering = ["-created"]
