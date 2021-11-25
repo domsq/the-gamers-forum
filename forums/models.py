@@ -10,3 +10,36 @@ class Topic(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Post(models.Model):
+    """Schema for the Post model"""
+    title = models.CharField(max_length=150, unique=True)
+    slug = models.SlugField(max_length=150, unique=True)
+    creator = models.ForeignKey(User, on_delete=models.CASCADE,
+                                related_name="user_posts")
+    updated = models.DateTimeField(auto_now=True)
+    body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    image = CloudinaryField("image", default="placeholder")
+    upvote = models.ManyToManyField(User, related_name="post_upvotes",
+                                    blank=True)
+    downvote = models.ManyToManyField(User, related_name="post_downvotes",
+                                      blank=True)
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE,
+                              related_name="topic_posts")
+
+    def __str__(self):
+        return self.title
+
+    def number_of_upvotes(self):
+        """Returns number of upvotes as a total"""
+        return self.upvote.count()
+
+    def number_of_downvotes(self):
+        """Returns number of downvotes as a total"""
+        return self.downvote.count()
+
+    class Meta:
+        """Sorts the posts in descending order"""
+        ordering = ["-created"]
