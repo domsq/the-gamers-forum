@@ -21,7 +21,7 @@ class Post(models.Model):
     updated = models.DateTimeField(auto_now=True)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
-    image = CloudinaryField("image", default="placeholder")
+    image = CloudinaryField("image", blank=True)
     upvote = models.ManyToManyField(User, related_name="post_upvotes",
                                     blank=True)
     downvote = models.ManyToManyField(User, related_name="post_downvotes",
@@ -52,7 +52,7 @@ class Reply(models.Model):
                                 related_name="user_replies")
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    image = CloudinaryField("image", default="placeholder")
+    image = CloudinaryField("image", blank=True)
     upvote = models.ManyToManyField(User, related_name="reply_upvotes",
                                     blank=True)
     downvote = models.ManyToManyField(User, related_name="reply_downvotes",
@@ -74,3 +74,14 @@ class Reply(models.Model):
     class Meta:
         """Sorts the posts in descending order"""
         ordering = ["-created"]
+
+
+class Contact(models.Model):
+    """Schema for the Contact model, to be used for a contact form"""
+    fname = models.CharField(max_length=150)
+    lname = models.CharField(max_length=150)
+    email = models.EmailField()
+    body = models.TextField()
+
+    def __str__(self):
+        return f"Message {self.body} from {self.fname} {self.lname}"
