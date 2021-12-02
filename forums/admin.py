@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Topic, Post
+from .models import Topic, Post, Reply
 
 
 @admin.register(Topic)
@@ -14,4 +14,12 @@ class PostAdmin(admin.ModelAdmin):
     """Admin view for Posts"""
     list_display = ('title', 'slug', 'created', 'creator')
     search_fields = ('title', 'body', 'creator')
+    list_filter = ('creator', 'created')
+
+
+@admin.register(Reply)
+class ReplyAdmin(admin.ModelAdmin):
+    """Admin view for Replies"""
+    list_display = ('post', 'created', 'creator')
+    search_fields = ('body', 'creator')
     list_filter = ('creator', 'created')
