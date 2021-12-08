@@ -1,0 +1,14 @@
+.navbar-bg {
+    background: #E1F1EE;
+}
+
+.navbar-brand {
+    font-family: 'Genos', sans-serif;
+    font-size: x-large;
+    font-weight: 900;
+}
+
+.body, a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
