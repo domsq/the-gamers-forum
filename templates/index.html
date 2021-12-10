@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Topic view parent container -->
+        <div class="col-12">
+            <div class="row">
+                <!-- Topic card layout -->
+                {% for topic in topic_list %}
+                <div class="col-md-2 col-xs-4 mt-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong>{{ topic.name }}</strong></h5>
+                            <p class="card-text">{{ topic.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
