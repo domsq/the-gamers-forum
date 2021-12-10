@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,18 +12,20 @@
     <script src="https://kit.fontawesome.com/ddf0e52b9b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body>
+<body class="d-flex flex-column h-100">
+
     <header>
+        <!-- Navigation element with collapsible functionality -->
         <nav class="navbar navbar-expand-lg navbar-light header-footer-bg">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#"><strong>The Gamers Forum</strong></a>
+              <a class="navbar-brand" href="{% url 'homepage' %}"><strong>The Gamers Forum</strong></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav justify-content-end">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Logout</a>
@@ -39,6 +41,12 @@
             </div>
           </nav>
     </header>
+
+    <main class="flex-shrink-0">
+      {% block content %}
+
+      {% endblock content %}
+    </main>
 
     <footer class="footer header-footer-bg mt-auto py-3">
         <p class="text-center m-0 py-2">© Copyright 2021. All rights reserved.</p>
