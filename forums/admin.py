@@ -15,6 +15,7 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'created', 'creator')
     search_fields = ('title', 'body', 'creator')
     list_filter = ('creator', 'created')
+    prepopulated_fields = {'slug': ('title',)}
 
 
 @admin.register(Reply)
