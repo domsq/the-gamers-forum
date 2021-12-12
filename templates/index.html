@@ -19,10 +19,19 @@
                 </div>
                 {% endfor %}
             </div>
+            <!-- Post list view for most recents posts -->
+            {% for post in posts %}
+                {% if forloop.counter <= 4 %}
+                    <div class="card">
+                        <h5 class="card-header">{{ post.title }}</h5>
+                        <div class="card-body">
+                            <p class="card-text">{{ post.body }}</p>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
-
     </div>
-
 </div>
 
 {% endblock %}
