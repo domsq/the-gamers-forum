@@ -6,30 +6,38 @@
     <div class="row">
         <!-- Topic view parent container -->
         <div class="col-12">
+            <h4 class="text-center mt-5"><strong>Welcome to The Gamers Forum! Click on a topic below to get
+                    started:</strong></h4>
             <div class="row">
                 <!-- Topic card layout -->
                 {% for topic in topic_list %}
-                <div class="col-md-2 col-xs-4 mt-4">
+                <div class="col-lg-2 col-sm-4 mt-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"><strong>{{ topic.name }}</strong></h5>
-                            <p class="card-text">{{ topic.description }}</p>
+                            <h5 class="card-title text-center"><strong>{{ topic.name }}</strong></h5>                            
                         </div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
+
+            <h4 class="text-center my-5"><strong>Recent posts:</strong></h4>
             <!-- Post list view for most recents posts -->
-            {% for post in posts %}
-                {% if forloop.counter <= 4 %}
-                    <div class="card">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    {% for post in posts %}
+                    {% if forloop.counter <= 4 %}
+                    <div class="card mb-2">
                         <h5 class="card-header">{{ post.title }}</h5>
                         <div class="card-body">
                             <p class="card-text">{{ post.body }}</p>
                         </div>
                     </div>
-                {% endif %}
-            {% endfor %}
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
