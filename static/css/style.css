@@ -5,9 +5,8 @@
 }
 
 .navbar-brand {
-    font-family: 'Audiowide', sans-serif; 
-    font-size: x-large;
-    font-weight: 900;
+    font-family: 'Audiowide', cursive; 
+    font-size: x-large;    
     color: whitesmoke !important;
 }
 
@@ -21,8 +20,7 @@
 }
 
 body {
-    font-family: 'Merriweather', sans-serif;
-    font-weight: 300;
+    font-family: 'Merriweather', serif;    
 }
 
 a {
@@ -44,6 +42,16 @@ footer a:hover {
 .footer-bg {
     background: #384968;
     color: whitesmoke;
+}
+
+/* Styling for card elements */
+
+.card {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.dark-font {
+    color: #384968;    
 }
 
 

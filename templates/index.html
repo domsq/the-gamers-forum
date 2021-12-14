@@ -30,7 +30,7 @@
                     {% for post in posts %}
                     {% if forloop.counter <= 4 %}
                     <div class="card mb-2">
-                        <h5 class="card-header">{{ post.title }}</h5>
+                        <h5 class="card-header dark-font"><strong>{{ post.title }}</strong></h5>
                         <div class="card-body">
                             <p class="card-text">{{ post.body }}</p>
                         </div>
