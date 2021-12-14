@@ -5,12 +5,8 @@
 <div class="container-fluid">
     <div class="row">
         <!-- Topic detailed view parent container -->
-        <div class="col-12">
-            <!-- <h4 class="text-center mt-5"><strong>Welcome to The Gamers Forum! Click on a topic below to get
-                    started:</strong></h4> -->
-
+        <div class="col-12">            
             <!-- Topic card layout -->
-
             <div class="mt-4">
                 <div class="card">
                     <div class="card-body">
@@ -23,17 +19,16 @@
             <h4 class="text-center my-5"><strong>Posts:</strong></h4>
             <!-- Post list view for most recents posts -->
             <div class="row">
-                
-                {% for post in posts %}
-                <div class="col-lg-3">
-                    <div class="card mb-2 d-lg-inline-block">
-                        <h5 class="card-header">{{ post.title }}</h5>
+                <div class="col-lg-8 mx-auto">
+                    {% for post in posts %}
+                    <div class="card mb-2">
+                        <h5 class="card-header dark-font"><strong>{{ post.title }}</strong></h5>
                         <div class="card-body">
                             <p class="card-text">{{ post.body }}</p>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
 
             </div>
 
