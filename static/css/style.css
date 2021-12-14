@@ -1,17 +1,27 @@
 /* Styling for header, footer and nav */
 
-.header-footer-bg {
-    background: #E1F1EE;
+.header-bg {
+    background: #993333;
 }
 
 .navbar-brand {
-    font-family: 'Genos', sans-serif;
+    font-family: 'Audiowide', sans-serif; 
     font-size: x-large;
     font-weight: 900;
+    color: whitesmoke !important;
+}
+
+.nav-item a {
+    color: whitesmoke !important;
+}
+
+.nav-item a:hover,
+.navbar-brand:hover {
+    color: coral !important;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Merriweather', sans-serif;
     font-weight: 300;
 }
 
@@ -24,6 +34,17 @@ a:hover {
 }
 
 footer a {
-    color: #212529;
+    color: whitesmoke;
 }
+
+footer a:hover {
+    color: coral;
+}
+
+.footer-bg {
+    background: #384968;
+    color: whitesmoke;
+}
+
+
 
