@@ -54,5 +54,22 @@ footer a:hover {
     color: #384968;    
 }
 
+/* Button styling */
+
+.main-btn {
+    background: #733C69;
+    color: whitesmoke;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.main-btn a {
+    color: whitesmoke;
+
+}
+
+.main-btn a:hover {
+    color: coral;
+}
+
 
 
