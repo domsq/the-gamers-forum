@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+
+        <div class="card mb-3 mt-5 mx-3">
+            <div class="row">
+              <div class="col-md-3">
+                <p class="card-text text-center pt-3"><strong>Author:</strong> {{ post.creator }}</p>
+                <p class="card-text text-center"><strong>Created:</strong> {{ post.created }}</p>
+              </div>
+              <div class="col-md-9">
+                <div class="card-body">
+                  <h5 class="card-title"><strong>{{ post.title }}</strong></h5>
+                  <hr>
+                  <p class="card-text">{{ post.body }}</p>
+                  <p class="card-text"><small class="text-muted">Last updated: {{ post.updated }}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </div>
+</div>
+
+{% endblock %}
