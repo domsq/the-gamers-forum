@@ -15,7 +15,7 @@ class TopicList(generic.ListView):
 
 
 class TopicDetail(View):
-    """View to render detail for a chosen topic"""
+    """ View to render detail for a chosen topic """
     def get(self, request, name, *args, **kwargs):
         queryset = Topic.objects
         topic = get_object_or_404(queryset, name=name)
@@ -28,4 +28,21 @@ class TopicDetail(View):
                 "topic": topic,
                 "posts": posts
             },
+        )
+
+
+class PostDetail(View):
+    """ View to render detail for a chosen post """
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Post.objects
+        post = get_object_or_404(queryset, slug=slug)
+        replies = post.post_replies.order_by('-created')
+
+        return render(
+            request,
+            'post_detail.html',
+            {
+                "post": post,
+                "replies": replies,
+            }
         )
