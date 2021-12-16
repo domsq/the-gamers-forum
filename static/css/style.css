@@ -67,6 +67,7 @@ footer a:hover {
 
 }
 
+.main-btn:hover,
 .main-btn a:hover {
     color: coral;
 }
