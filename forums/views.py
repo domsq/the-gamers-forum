@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from .models import Post, Topic
+from .forms import ReplyForm
 
 
 class TopicList(generic.ListView):
@@ -44,5 +45,32 @@ class PostDetail(View):
             {
                 "post": post,
                 "replies": replies,
-            }
+                "reply_form": ReplyForm()
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Post.objects
+        post = get_object_or_404(queryset, slug=slug)
+        replies = post.post_replies.order_by('-created')
+
+        reply_form = ReplyForm(data=request.POST)
+
+        if reply_form.is_valid():
+            reply_form.instance.creator = request.user
+            reply = reply_form.save(commit=False)
+            reply.post = post
+            reply.save()
+
+        else:
+            reply_form = ReplyForm()
+
+        return render(
+            request,
+            'post_detail.html',
+            {
+                "post": post,
+                "replies": replies,
+                "reply_form": ReplyForm()
+            },
         )
