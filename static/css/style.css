@@ -44,6 +44,11 @@ footer a:hover {
     color: whitesmoke;
 }
 
+.clear {
+    clear: both;
+    height: 106px;
+}
+
 /* Styling for card elements */
 
 .card {
