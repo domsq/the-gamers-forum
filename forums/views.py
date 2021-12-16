@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
+from django.contrib import messages
 from .models import Post, Topic
 from .forms import ReplyForm
 
@@ -61,6 +62,8 @@ class PostDetail(View):
             reply = reply_form.save(commit=False)
             reply.post = post
             reply.save()
+            messages.add_message(request, messages.SUCCESS,
+                                 'Reply successfully added!')
 
         else:
             reply_form = ReplyForm()
