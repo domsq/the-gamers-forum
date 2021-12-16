@@ -39,7 +39,7 @@ footer a:hover {
     color: coral;
 }
 
-.footer-bg {
+.dark-bg {
     background: #384968;
     color: whitesmoke;
 }
@@ -69,6 +69,20 @@ footer a:hover {
 
 .main-btn a:hover {
     color: coral;
+}
+
+/* Border styling for post and reply cards */
+
+.border-right {
+    border-right: 3px solid #384968;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 765px) {
+    .border-right {
+    border-right: none;
+    }
 }
 
 

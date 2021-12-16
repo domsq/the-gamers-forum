@@ -4,10 +4,10 @@
 
 <div class="row">
     <div class="col-12">
-
+        <!-- Card to display chosen post -->
         <div class="card mb-3 mt-5 mx-3">
             <div class="row">
-              <div class="col-md-3">
+              <div class="col-md-3 border-right">
                 <p class="card-text text-center pt-3"><strong>Author:</strong> {{ post.creator }}</p>
                 <p class="card-text text-center"><strong>Created:</strong> {{ post.created }}</p>
               </div>
@@ -21,6 +21,24 @@
               </div>
             </div>
           </div>
+
+          <h4 class="text-center my-5"><strong>Replies:</strong></h4>
+          <!-- For display of related replies -->
+          {% for reply in replies %}
+          <div class="card mb-3 mt-5 mx-3">
+            <div class="row">
+              <div class="col-md-3 border-right">
+                <p class="card-text text-center pt-3"><strong>Author:</strong> {{ reply.creator }}</p>
+                <p class="card-text text-center pb-3"><strong>Created:</strong> {{ reply.created }}</p>
+              </div>
+              <div class="col-md-9">
+                <div class="card-body">                  
+                  <p class="card-text">{{ reply.body }}</p>                  
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
 
     </div>
 </div>
