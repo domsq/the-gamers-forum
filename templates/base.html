@@ -47,6 +47,21 @@
           </nav>
     </header>
 
+    <!-- Guidance on displaying messages taken from Django blog walkthrough project -->
+    <div class="container mt-3">
+      <div class="row">
+          <div class="col-md-8 offset-md-2">
+              {% for message in messages %}
+              <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                  {{ message | safe }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">                        
+                  </button>
+              </div>
+              {% endfor %}
+          </div>
+      </div>
+  </div>
+
     <main class="flex-shrink-0">
       {% block content %}
 
@@ -65,5 +80,14 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    <!-- Guidance on displaying messages taken from Django blog walkthrough project -->
+    <script>
+      setTimeout(function() {
+          let messages = document.getElementById("msg");
+          let alert = new bootstrap.Alert(messages);
+          alert.close();
+      }, 3000);
+  </script>
 </body>
 </html>
