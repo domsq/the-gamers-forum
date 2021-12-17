@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.contrib import messages
 from .models import Post, Topic
-from .forms import ReplyForm
+from .forms import PostAddForm, ReplyForm
 
 
 class TopicList(generic.ListView):
@@ -76,4 +76,16 @@ class PostDetail(View):
                 "replies": replies,
                 "reply_form": ReplyForm()
             },
+        )
+
+class PostAdd(View):
+    """ View to allow adding of new posts """
+    def get(self, request, *args, **kwargs):
+
+        return render(
+            request,
+            'add_post.html',
+            {
+                'post_add_form': PostAddForm()
+            }
         )
