@@ -89,3 +89,27 @@ class PostAdd(View):
                 'post_add_form': PostAddForm()
             }
         )
+
+    def post(self, request, *args, **kwargs):
+
+        post_add_form = PostAddForm(data=request.POST)
+
+        if post_add_form.is_valid():
+            post_add_form.instance.creator = request.user
+            post_add_form.save()
+            messages.add_message(request, messages.SUCCESS,
+                                 'Post successfully added!')
+
+        else:
+            post_add_form = PostAddForm()
+            messages.add_message(request, messages.WARNING,
+                                 'Post not added. Please see ' +
+                                 '"Guidance on creating posts."')
+
+        return render(
+            request,
+            'add_post.html',
+            {
+                'post_add_form': PostAddForm()
+            }
+        )
