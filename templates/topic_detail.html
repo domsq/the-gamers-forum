@@ -16,6 +16,7 @@
                 </div>
             </div>
 
+            {% if user.is_authenticated %}
             <div class="row">
                 <div class="col-2 mx-auto text-center mt-5">
                     <div class="btn d-inline-block main-btn">
@@ -23,6 +24,9 @@
                     </div>
                 </div>
             </div>
+            {% else %}
+            <p class="text-center mt-5">You need to be signed in to add a post.</p>
+            {% endif %}
 
             <h4 class="text-center my-5"><strong>Posts:</strong></h4>
             <!-- Post list view for most recents posts -->
