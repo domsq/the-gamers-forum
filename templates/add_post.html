@@ -4,6 +4,16 @@
 
 {% load crispy_forms_tags %}
 
+<h4 class="text-center my-2"><strong>Guidance on creating posts:</strong></h4>
+<ul class="text-center list-style-none">
+    <li>You must select a topic.</li>
+    <li>Title and slug fields must be unique (can't already exist).</li>
+    <li>Title and slug fields can be max 150 characters.</li>
+    <li>Slug field cannot contain any spaces.</li>
+    <li>Slug field should contain keywords about post and date (DDMMYY), eg: newgame171221</li>
+    <li>The body cannot be left blank.</li>
+</ul>
+
 <div class="card mb-4 mt-5 mx-3">
     <div class="card-body">
         <h4>Add post:</h4>

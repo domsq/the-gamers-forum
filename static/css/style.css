@@ -83,6 +83,12 @@ footer a:hover {
     border-right: 3px solid #384968;
 }
 
+/* Styling rules for lists */
+
+.list-style-none {
+    list-style-type: none;
+}
+
 /* Media queries */
 
 @media screen and (max-width: 765px) {
