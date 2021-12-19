@@ -1,22 +1,24 @@
 /* Styling for header, footer and nav */
 
 .header-bg {
-    background: #993333;
+    background: #006473 url('/static/images/mobo.jpg') 48%;
 }
 
 .navbar-brand {
-    font-family: 'Audiowide', cursive; 
+    font-family: 'Audiowide', cursive;
     font-size: x-large;    
-    color: whitesmoke !important;
+    color: #FDDE6C !important;
+    text-shadow: 4px 4px #2F4858;
 }
 
 .nav-item a {
     color: whitesmoke !important;
+    text-shadow: 2px 2px #2F4858;
 }
 
 .nav-item a:hover,
 .navbar-brand:hover {
-    color: coral !important;
+    color: #81AD36!important;
 }
 
 body {
@@ -36,11 +38,11 @@ footer a {
 }
 
 footer a:hover {
-    color: coral;
+    color: #81AD36;
 }
 
 .dark-bg {
-    background: #384968;
+    background: #2F4858;
     color: whitesmoke;
 }
 
@@ -56,13 +58,25 @@ footer a:hover {
 }
 
 .dark-font {
-    color: #384968;    
+    color: #2F4858;    
+}
+
+.topic-category {
+    background: #FFEFCA;
+}
+
+.topic-category a {
+    color: #2F4858 !important;
+}
+
+.topic-category a:hover {
+    color: #299A5E !important;
 }
 
 /* Button styling */
 
 .main-btn {
-    background: #733C69;
+    background: #006473;
     color: whitesmoke;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
@@ -74,13 +88,13 @@ footer a:hover {
 
 .main-btn:hover,
 .main-btn a:hover {
-    color: coral;
+    color: #81AD36;
 }
 
 /* Border styling for post and reply cards */
 
 .border-right {
-    border-right: 3px solid #384968;
+    border-right: 3px solid #2F4858;
 }
 
 /* Styling rules for lists */

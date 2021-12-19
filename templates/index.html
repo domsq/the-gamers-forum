@@ -12,7 +12,7 @@
                 <!-- Topic card layout -->
                 {% for topic in topic_list %}
                 <div class="col-lg-2 col-sm-4 mt-4">
-                    <div class="card">
+                    <div class="card topic-category">
                         <div class="card-body">
                             <a href="{% url 'topic_detail' topic.name %}">
                                 <h5 class="card-title text-center"><strong>{{ topic.name }}</strong></h5>
