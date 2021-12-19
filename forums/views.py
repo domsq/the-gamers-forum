@@ -135,3 +135,28 @@ class PostEdit(View):
                 'post_edit_form': PostAddForm(instance=post)
             }
         )
+
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Post.objects
+        post = get_object_or_404(queryset, slug=slug)
+
+        post_edit_form = PostAddForm(request.POST, instance=post)
+
+        if post_edit_form.is_valid():
+            post_edit_form.save()
+            messages.add_message(request, messages.SUCCESS,
+                                 'Post successfully amended!')
+
+        else:
+            post_edit_form = PostAddForm(instance=post)
+            messages.add_message(request, messages.WARNING,
+                                 'Post not amended. Please see ' +
+                                 '"Guidance on editing posts."')
+
+        return render(
+            request,
+            'edit_post.html',
+            {
+                'post_edit_form': PostAddForm(instance=post)
+            }
+        )
