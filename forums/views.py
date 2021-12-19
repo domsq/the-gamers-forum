@@ -80,6 +80,7 @@ class PostDetail(View):
             },
         )
 
+
 class PostAdd(View):
     """ View to allow adding of new posts """
     def get(self, request, *args, **kwargs):
@@ -117,5 +118,20 @@ class PostAdd(View):
             'add_post.html',
             {
                 'post_add_form': PostAddForm()
+            }
+        )
+
+
+class PostEdit(View):
+    """ View to allow editing of existing posts """
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Post.objects
+        post = get_object_or_404(queryset, slug=slug)
+
+        return render(
+            request,
+            'edit_post.html',
+            {
+                'post_edit_form': PostAddForm(instance=post)
             }
         )
