@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     {% for post in posts %}
-                    {% if forloop.counter <= 4 %}
+                    {% if forloop.counter <= 6 %}
                     <div class="card mb-2">
                         <a href="{% url 'post_detail' post.slug %}">
                             <h5 class="card-header dark-font"><strong>{{ post.title }}</strong></h5>

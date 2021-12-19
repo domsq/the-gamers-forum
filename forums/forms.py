@@ -11,4 +11,4 @@ class ReplyForm(forms.ModelForm):
 class PostAddForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('topic', 'title', 'slug', 'body',)
+        fields = ('topic', 'title', 'body',)

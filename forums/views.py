@@ -1,3 +1,5 @@
+import random
+import string
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.contrib import messages
@@ -92,10 +94,14 @@ class PostAdd(View):
 
     def post(self, request, *args, **kwargs):
 
+        letterstr = string.ascii_lowercase
+        slugval = ''.join(random.choice(letterstr) for i in range(6))
+
         post_add_form = PostAddForm(data=request.POST)
 
         if post_add_form.is_valid():
             post_add_form.instance.creator = request.user
+            post_add_form.instance.slug = slugval
             post_add_form.save()
             messages.add_message(request, messages.SUCCESS,
                                  'Post successfully added!')
