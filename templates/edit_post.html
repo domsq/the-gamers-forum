@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<h4 class="text-center my-2"><strong>Guidance on editing posts:</strong></h4>
+<ul class="text-center list-style-none">
+    <li>You must select a topic.</li>
+    <li>Title field must be unique (can't already exist).</li>
+    <li>Title field can be max 150 characters.</li>
+    <li>The body cannot be left blank.</li>
+</ul>
+
+<div class="card mb-4 mt-5 mx-3">
+    <div class="card-body">
+        <h4>Edit post:</h4>
+        <p>Posting as: {{ user.username }}</p>
+        <form method="post" style="margin-top: 1.3em;">
+            {{ post_edit_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn main-btn mt-3">Save Post</button>
+        </form>               
+    </div>
+</div>
+
+{% endblock %}
