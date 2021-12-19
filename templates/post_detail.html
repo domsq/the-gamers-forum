@@ -27,12 +27,35 @@
         <div class="btn btn-sm d-inline-block main-btn ms-3">
             <a href="{% url 'edit_post' post.slug %}">Edit</a>
         </div>
-        <div class="btn btn-sm d-inline-block main-btn ms-2">
-            <a href="">Delete</a>
-        </div>
+        <!-- Modal trigger button -->
+        <button type="button" class="btn btn-sm main-btn ms-2" data-bs-toggle="modal" data-bs-target="#deleteModal">
+            Delete
+        </button>        
         {% else %}
 
         {% endif %}
+        
+        <!-- Modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="modalHeading" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalHeading">Delete Post</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete this post?
+                    </div>
+                    <div class="modal-footer">
+                        <div class="btn d-inline-block btn-danger">
+                            <a href="{% url 'delete_post' post.slug %}">Delete</a>
+                        </div>
+                        <button type="button" class="btn main-btn" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Guidance for reply form taken from the Django blog walkthrough project -->
         {% if user.is_authenticated %}
         <div class="card mb-4 mt-5 mx-3">
@@ -70,5 +93,7 @@
 
     </div>
 </div>
+
+
 
 {% endblock %}
