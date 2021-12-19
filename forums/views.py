@@ -1,6 +1,6 @@
 import random
 import string
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from django.contrib import messages
 from .models import Post, Topic
@@ -160,3 +160,15 @@ class PostEdit(View):
                 'post_edit_form': PostAddForm(instance=post)
             }
         )
+
+
+def delete_post(request, slug, *args, **kwargs):
+    """ View to delete post """
+    queryset = Post.objects
+    post = get_object_or_404(queryset, slug=slug)
+
+    post.delete()
+    messages.add_message(request, messages.SUCCESS,
+                                 'Post deleted!')
+
+    return redirect('homepage')
