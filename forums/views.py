@@ -1,10 +1,11 @@
 import random
 import string
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views import generic, View
+from django.views.generic import CreateView, DeleteView
 from django.contrib import messages
 from .models import Post, Topic
 from .forms import PostAddForm, ReplyForm
+from django.contrib.views.messages import SuccessMessageMixin
 
 
 class TopicList(generic.ListView):
@@ -81,46 +82,14 @@ class PostDetail(View):
         )
 
 
-class PostAdd(View):
-    """ View to allow adding of new posts """
-    def get(self, request, *args, **kwargs):
+class PostAdd(SuccessMessageMixin, CreateView):
+    model = Post
+    fields = exclude('creator', 'created', 'updated')
+    success_message = "successfully posted"
 
-        return render(
-            request,
-            'add_post.html',
-            {
-                'post_add_form': PostAddForm()
-            }
-        )
-
-    def post(self, request, *args, **kwargs):
-
-        letterstr = string.ascii_lowercase
-        slugval = ''.join(random.choice(letterstr) for i in range(6))
-
-        post_add_form = PostAddForm(data=request.POST)
-
-        if post_add_form.is_valid():
-            post_add_form.instance.creator = request.user
-            post_add_form.instance.slug = slugval
-            post_add_form.save()
-            messages.add_message(request, messages.SUCCESS,
-                                 'Post successfully added!')
-
-        else:
-            post_add_form = PostAddForm()
-            messages.add_message(request, messages.WARNING,
-                                 'Post not added. Please see ' +
-                                 '"Guidance on creating posts."')
-
-        return render(
-            request,
-            'add_post.html',
-            {
-                'post_add_form': PostAddForm()
-            }
-        )
-
+    def form_valid(self, form):
+        form.instance.creator = self.request.user
+        return super().form_valid()
 
 class PostEdit(View):
     """ View to allow editing of existing posts """
@@ -162,13 +131,11 @@ class PostEdit(View):
         )
 
 
-def delete_post(request, slug, *args, **kwargs):
-    """ View to delete post """
-    queryset = Post.objects
-    post = get_object_or_404(queryset, slug=slug)
-
-    post.delete()
-    messages.add_message(request, messages.SUCCESS,
-                                 'Post deleted!')
-
-    return redirect('homepage')
+class PostDeleteView(DeleteView):
+    model = Post
+    
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.creator:
+            return True
+        return false
