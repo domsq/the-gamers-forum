@@ -1,3 +1,10 @@
 from django.contrib import admin
+from .models import Contact
 
-# Register your models here.
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    """Admin view for messages sent to Contact"""
+    list_display = ('fname', 'lname', 'email')
+    search_fields = ('fname', 'lname', 'email', 'body')
+    list_filter = ('fname', 'lname', 'email')

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Topic, Post, Reply, Contact
+from .models import Topic, Post, Reply
 
 
 @admin.register(Topic)
@@ -24,11 +24,3 @@ class ReplyAdmin(admin.ModelAdmin):
     list_display = ('post', 'created', 'creator')
     search_fields = ('body', 'creator')
     list_filter = ('creator', 'created')
-
-
-@admin.register(Contact)
-class ContactAdmin(admin.ModelAdmin):
-    """Admin view for messages sent to Contact"""
-    list_display = ('fname', 'lname', 'email')
-    search_fields = ('fname', 'lname', 'email', 'body')
-    list_filter = ('fname', 'lname', 'email')
