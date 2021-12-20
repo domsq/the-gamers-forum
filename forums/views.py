@@ -6,6 +6,8 @@ from django.contrib import messages
 from .models import Post, Topic
 from .forms import PostAddForm, ReplyForm
 from django.contrib.views.messages import SuccessMessageMixin
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 
 class TopicList(generic.ListView):
@@ -131,8 +133,10 @@ class PostEdit(View):
         )
 
 
-class PostDeleteView(DeleteView):
+class PostDeleteView(UserPassesTestMixin, DeleteView):
     model = Post
+    success_message = "successfully deleted
+    success_url = reverse_lazy('post_detail')
     
     def test_func(self):
         post = self.get_object()
