@@ -96,3 +96,16 @@ The Gamer's Forum is a website for gamers of all creeds (console, PC or mobile) 
 ### Media
 
 ### Acknowledgements
+<br>
+In addition to the content covered in the LMS and, in particular the "I Think Therefore I Blog" walkthrough project, I used the following resources for additional learning:
+<br><br>
+https://www.tutorialguruji.com/python/django-pass-multiple-models-to-my-listview/<br>
+https://www.youtube.com/watch?v=QvTyqta3OJo<br>
+https://www.youtube.com/watch?v=9aEsZxaOwRs<br>
+https://stackoverflow.com/questions/51420143/django-pass-known-exact-string-as-a-url-parameter<br>
+https://groups.google.com/g/django-users/c/cKd3t7yQzFo?pli=1<br>
+https://stackoverflow.com/questions/13881548/sticky-footer-hiding-content<br>
+https://docs.djangoproject.com/en/4.0/topics/forms/modelforms/<br>
+https://stackhowto.com/python-generate-a-random-alphanumeric-string/<br>
+https://www.w3schools.com/cssref/css3_pr_text-shadow.asp<br>
+https://stackoverflow.com/questions/40506827/django-how-to-allow-only-the-owner-of-a-new-post-to-edit-or-delete-the-post
