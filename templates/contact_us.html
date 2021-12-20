@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<h4 class="text-center my-2"><strong>Guidance on submitting messages:</strong></h4>
+<ul class="text-center list-style-none">    
+    <li>All fields are required</li>
+    <li>The fname and lname fields can be max 150 characters</li>    
+</ul>
+
+<div class="card mb-4 mt-5 mx-3">
+    <div class="card-body">
+        <h4>Send message:</h4>        
+        <form method="post" style="margin-top: 1.3em;">
+            {{ contact_us_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn main-btn mt-3">Send</button>
+        </form>               
+    </div>
+</div>
+
+{% endblock %}
