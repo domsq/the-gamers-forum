@@ -172,6 +172,6 @@ def delete_post(request, id, *args, **kwargs):
 
     post.delete()
     messages.add_message(request, messages.SUCCESS,
-                                 'Post deleted!')
+                         'Post deleted!')
 
     return redirect('homepage')

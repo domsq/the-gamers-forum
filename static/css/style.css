@@ -88,9 +88,17 @@ main {
     color: #299A5E !important;
 }
 
+/* Form styling rules */
+
 .form-group {
     margin-bottom: 1rem;
 }
+
+.login label,
+.signup label {
+    display: block;
+}
+
 
 /* Button styling */
 
