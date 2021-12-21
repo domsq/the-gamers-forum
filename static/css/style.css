@@ -18,7 +18,7 @@
 
 .nav-item a:hover,
 .navbar-brand:hover {
-    color: #81AD36!important;
+    color: #81AD36 !important;
 }
 
 body {
@@ -56,6 +56,14 @@ footer a:hover {
 main {
     min-height: 100%;
     margin-bottom: -108px;
+}
+
+.sign-in-prompt {
+    color: #81AD36;
+}
+
+.sign-in-prompt:hover {
+    color: #006473;
 }
 
 /* Styling for card elements */

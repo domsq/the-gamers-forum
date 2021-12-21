@@ -71,7 +71,7 @@
             </div>
         </div>
         {% else %}
-        <p class="text-center mt-5">You need to be signed in to leave a reply.</p>
+        <p class="text-center mt-5"><a href="{% url 'account_login' %}" class="sign-in-prompt">Sign in</a> to leave a reply.</p>
         {% endif %}
 
         <h4 class="text-center my-5"><strong>Replies</strong></h4>

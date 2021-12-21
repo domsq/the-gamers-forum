@@ -25,7 +25,7 @@
                 </div>
             </div>
             {% else %}
-            <p class="text-center mt-5">You need to be signed in to add a post.</p>
+            <p class="text-center mt-5"><a href="{% url 'account_login' %}" class="sign-in-prompt">Sign in</a> to add a post.</p>
             {% endif %}
 
             <h4 class="text-center my-5"><strong>Posts</strong></h4>
@@ -40,6 +40,7 @@
                         </a>                        
                         <div class="card-body">
                             <p class="card-text">{{ post.body }}</p>
+                            <p class="card-text"><small class="text-muted">Author: {{ post.creator }}</small></p>
                         </div>
                     </div>
                     {% endfor %}
