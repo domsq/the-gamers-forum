@@ -111,18 +111,12 @@ class PostAdd(View):
                                  'Post successfully added!')
 
         else:
-            post_add_form = PostAddForm()
             messages.add_message(request, messages.WARNING,
                                  'Post not added. Please see ' +
                                  '"Guidance on creating posts."')
 
-        return render(
-            request,
-            'add_post.html',
-            {
-                'post_add_form': PostAddForm()
-            }
-        )
+        return redirect('homepage')
+
 
 
 class PostEdit(View):
