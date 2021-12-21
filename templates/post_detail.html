@@ -60,7 +60,7 @@
         {% if user.is_authenticated %}
         <div class="card mb-4 mt-5 mx-3">
             <div class="card-body">
-                <h4>Add a reply:</h4>
+                <h4>Add a reply</h4>
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
                     {{ reply_form | crispy }}
@@ -73,7 +73,7 @@
         <p class="text-center mt-5">You need to be signed in to leave a reply.</p>
         {% endif %}
 
-        <h4 class="text-center my-5"><strong>Replies:</strong></h4>
+        <h4 class="text-center my-5"><strong>Replies</strong></h4>
         <!-- For display of related replies -->
         {% for reply in replies %}
         <div class="card mb-3 mx-3">

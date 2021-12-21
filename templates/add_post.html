@@ -4,7 +4,7 @@
 
 {% load crispy_forms_tags %}
 
-<h4 class="text-center my-2"><strong>Guidance on creating posts:</strong></h4>
+<h4 class="text-center my-2"><strong>Guidance on creating posts</strong></h4>
 <ul class="text-center list-style-none">
     <li>You must select a topic.</li>
     <li>Title field must be unique (can't already exist).</li>
@@ -14,7 +14,7 @@
 
 <div class="card mb-4 mt-5 mx-3">
     <div class="card-body">
-        <h4>Add post:</h4>
+        <h4>Add post</h4>
         <p>Posting as: {{ user.username }}</p>
         <form method="post" style="margin-top: 1.3em;">
             {{ post_add_form | crispy }}

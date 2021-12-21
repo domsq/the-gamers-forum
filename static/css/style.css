@@ -35,6 +35,8 @@ a:hover {
 
 footer a {
     color: whitesmoke;
+    font-size: x-large;
+    padding-right: 6px;
 }
 
 footer a:hover {
@@ -48,7 +50,12 @@ footer a:hover {
 
 .clear {
     clear: both;
-    height: 106px;
+    height: 118px;
+}
+
+main {
+    min-height: 100%;
+    margin-bottom: -108px;
 }
 
 /* Styling for card elements */
