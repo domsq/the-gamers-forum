@@ -66,11 +66,12 @@
                 <form method="post" style="margin-top: 1.3em;">
                     {{ reply_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn main-btn mt-3">Submit</button>
+                    <button type="submit" class="btn main-btn">Submit</button>
                 </form>
             </div>
         </div>
         {% else %}
+        <!-- Adjusted following discussion with mentor -->
         <p class="text-center mt-5"><a href="{% url 'account_login' %}" class="sign-in-prompt">Sign in</a> to leave a reply.</p>
         {% endif %}
 

@@ -88,6 +88,10 @@ main {
     color: #299A5E !important;
 }
 
+.form-group {
+    margin-bottom: 1rem;
+}
+
 /* Button styling */
 
 .main-btn {
