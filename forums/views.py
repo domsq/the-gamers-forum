@@ -6,6 +6,9 @@ from django.contrib import messages
 from .models import Post, Topic
 from .forms import PostAddForm, ReplyForm
 
+# Views for PostDetail, PostEdit and delete_post
+# adjusted following discussion with mentor
+
 
 class TopicList(generic.ListView):
     """ View to render the topics list """
@@ -37,9 +40,9 @@ class TopicDetail(View):
 
 class PostDetail(View):
     """ View to render detail for a chosen post """
-    def get(self, request, slug, *args, **kwargs):
+    def get(self, request, id, *args, **kwargs):
         queryset = Post.objects
-        post = get_object_or_404(queryset, slug=slug)
+        post = get_object_or_404(queryset, id=id)
         replies = post.post_replies.order_by('-created')
 
         return render(
@@ -52,9 +55,9 @@ class PostDetail(View):
             },
         )
 
-    def post(self, request, slug, *args, **kwargs):
+    def post(self, request, id, *args, **kwargs):
         queryset = Post.objects
-        post = get_object_or_404(queryset, slug=slug)
+        post = get_object_or_404(queryset, id=id)
         replies = post.post_replies.order_by('-created')
 
         reply_form = ReplyForm(data=request.POST)
@@ -124,9 +127,9 @@ class PostAdd(View):
 
 class PostEdit(View):
     """ View to allow editing of existing posts """
-    def get(self, request, slug, *args, **kwargs):
+    def get(self, request, id, *args, **kwargs):
         queryset = Post.objects
-        post = get_object_or_404(queryset, slug=slug)
+        post = get_object_or_404(queryset, id=id)
 
         return render(
             request,
@@ -136,9 +139,9 @@ class PostEdit(View):
             }
         )
 
-    def post(self, request, slug, *args, **kwargs):
+    def post(self, request, id, *args, **kwargs):
         queryset = Post.objects
-        post = get_object_or_404(queryset, slug=slug)
+        post = get_object_or_404(queryset, id=id)
 
         post_edit_form = PostAddForm(request.POST, instance=post)
 
@@ -162,10 +165,10 @@ class PostEdit(View):
         )
 
 
-def delete_post(request, slug, *args, **kwargs):
+def delete_post(request, id, *args, **kwargs):
     """ View to delete post """
     queryset = Post.objects
-    post = get_object_or_404(queryset, slug=slug)
+    post = get_object_or_404(queryset, id=id)
 
     post.delete()
     messages.add_message(request, messages.SUCCESS,

@@ -25,7 +25,7 @@
         </div>
         {% if user == post.creator %}
         <div class="btn btn-sm d-inline-block main-btn ms-3">
-            <a href="{% url 'edit_post' post.slug %}">Edit</a>
+            <a href="{% url 'edit_post' post.id %}">Edit</a>
         </div>
         <!-- Modal trigger button -->
         <button type="button" class="btn btn-sm main-btn ms-2" data-bs-toggle="modal" data-bs-target="#deleteModal">
@@ -48,7 +48,8 @@
                     </div>
                     <div class="modal-footer">
                         <div class="btn d-inline-block btn-danger">
-                            <a href="{% url 'delete_post' post.slug %}">Delete</a>
+                            <!-- Adjusted following discussion with mentor -->
+                            <a href="{% url 'delete_post' post.id %}">Delete</a>
                         </div>
                         <button type="button" class="btn main-btn" data-bs-dismiss="modal">Close</button>
                     </div>

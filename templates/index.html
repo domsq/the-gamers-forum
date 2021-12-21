@@ -30,7 +30,8 @@
                     {% for post in posts %}
                     {% if forloop.counter <= 6 %}
                     <div class="card mb-2">
-                        <a href="{% url 'post_detail' post.slug %}">
+                        <!-- Adjusted following discussion with mentor -->
+                        <a href="{% url 'post_detail' post.id %}">
                             <h5 class="card-header dark-font"><strong>{{ post.title }}</strong></h5>
                         </a>                        
                         <div class="card-body">
