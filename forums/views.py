@@ -43,7 +43,7 @@ class PostDetail(View):
     def get(self, request, id, *args, **kwargs):
         queryset = Post.objects
         post = get_object_or_404(queryset, id=id)
-        replies = post.post_replies.order_by('-created')
+        replies = post.post_replies.order_by('created')
 
         return render(
             request,
@@ -58,7 +58,7 @@ class PostDetail(View):
     def post(self, request, id, *args, **kwargs):
         queryset = Post.objects
         post = get_object_or_404(queryset, id=id)
-        replies = post.post_replies.order_by('-created')
+        replies = post.post_replies.order_by('created')
 
         reply_form = ReplyForm(data=request.POST)
 
@@ -136,7 +136,7 @@ class PostEdit(View):
     def post(self, request, id, *args, **kwargs):
         queryset = Post.objects
         post = get_object_or_404(queryset, id=id)
-        replies = post.post_replies.order_by('-created')
+        replies = post.post_replies.order_by('created')
 
         post_edit_form = PostAddForm(request.POST, instance=post)
 

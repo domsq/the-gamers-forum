@@ -7,6 +7,9 @@ class ReplyForm(forms.ModelForm):
     class Meta:
         model = Reply
         fields = ('body',)
+        widgets = {
+            'body': forms.Textarea(attrs={'cols': 40, 'rows': 3}),
+        }
 
 
 class PostAddForm(forms.ModelForm):

@@ -57,24 +57,6 @@
             </div>
         </div>
 
-        <!-- Guidance for reply form taken from the Django blog walkthrough project -->
-        {% if user.is_authenticated %}
-        <div class="card mb-4 mt-5 mx-3">
-            <div class="card-body">
-                <h4>Add a reply</h4>
-                <p>Posting as: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1.3em;">
-                    {{ reply_form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit" class="btn main-btn">Submit</button>
-                </form>
-            </div>
-        </div>
-        {% else %}
-        <!-- Adjusted following discussion with mentor -->
-        <p class="text-center mt-5"><a href="{% url 'account_login' %}" class="sign-in-prompt">Sign in</a> to leave a reply.</p>
-        {% endif %}
-
         <h4 class="text-center my-5"><strong>Replies</strong></h4>
         <!-- For display of related replies -->
         {% for reply in replies %}
@@ -92,6 +74,25 @@
             </div>
         </div>
         {% endfor %}
+
+        <!-- Guidance for reply form taken from the Django blog walkthrough project -->
+        <!-- Position of reply form moved to bottom of page as discussed with mentor -->
+        {% if user.is_authenticated %}
+        <div class="card mb-4 mt-5 mx-3">
+            <div class="card-body">
+                <h4>Add a reply</h4>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ reply_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn main-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+        {% else %}
+        <!-- Adjusted following discussion with mentor -->
+        <p class="text-center mt-5"><a href="{% url 'account_login' %}" class="sign-in-prompt">Sign in</a> to leave a reply.</p>
+        {% endif %}
 
     </div>
 </div>
