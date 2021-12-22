@@ -1,12 +1,14 @@
 import random
 import string
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from django.views import generic, View
 from django.contrib import messages
 from .models import Post, Topic
 from .forms import PostAddForm, ReplyForm
 
-# Views for PostDetail, PostEdit and delete_post
+# Views for PostDetail, PostAdd, PostEdit and delete_post
 # adjusted following discussion with mentor
 
 
@@ -38,6 +40,7 @@ class TopicDetail(View):
         )
 
 
+@method_decorator(login_required, name='post')
 class PostDetail(View):
     """ View to render detail for a chosen post """
     def get(self, request, id, *args, **kwargs):
@@ -84,6 +87,7 @@ class PostDetail(View):
         )
 
 
+@method_decorator(login_required, name='post')
 class PostAdd(View):
     """ View to allow adding of new posts """
     def get(self, request, *args, **kwargs):
@@ -118,7 +122,7 @@ class PostAdd(View):
         return redirect('homepage')
 
 
-
+@method_decorator(login_required, name='post')
 class PostEdit(View):
     """ View to allow editing of existing posts """
     def get(self, request, id, *args, **kwargs):
@@ -140,16 +144,17 @@ class PostEdit(View):
 
         post_edit_form = PostAddForm(request.POST, instance=post)
 
-        if post_edit_form.is_valid():
-            post_edit_form.save()
-            messages.add_message(request, messages.SUCCESS,
-                                 'Post successfully amended!')
+        if request.user == post.creator:
+            if post_edit_form.is_valid():
+                post_edit_form.save()
+                messages.add_message(request, messages.SUCCESS,
+                                     'Post successfully amended!')
 
-        else:
-            post_edit_form = PostAddForm(instance=post)
-            messages.add_message(request, messages.WARNING,
-                                 'Post not amended. Please see ' +
-                                 '"Guidance on editing posts."')
+            else:
+                post_edit_form = PostAddForm(instance=post)
+                messages.add_message(request, messages.WARNING,
+                                     'Post not amended. Please see ' +
+                                     '"Guidance on editing posts."')
 
         return render(
             request,
@@ -162,13 +167,15 @@ class PostEdit(View):
         )
 
 
+@login_required
 def delete_post(request, id, *args, **kwargs):
     """ View to delete post """
     queryset = Post.objects
     post = get_object_or_404(queryset, id=id)
 
-    post.delete()
-    messages.add_message(request, messages.SUCCESS,
-                         'Post deleted!')
+    if request.user == post.creator:
+        post.delete()
+        messages.add_message(request, messages.SUCCESS,
+                             'Post deleted!')
 
     return redirect('homepage')
