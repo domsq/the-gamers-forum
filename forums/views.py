@@ -136,6 +136,7 @@ class PostEdit(View):
     def post(self, request, id, *args, **kwargs):
         queryset = Post.objects
         post = get_object_or_404(queryset, id=id)
+        replies = post.post_replies.order_by('-created')
 
         post_edit_form = PostAddForm(request.POST, instance=post)
 
@@ -152,10 +153,12 @@ class PostEdit(View):
 
         return render(
             request,
-            'edit_post.html',
+            'post_detail.html',
             {
-                'post_edit_form': PostAddForm(instance=post)
-            }
+                "post": post,
+                "replies": replies,
+                "reply_form": ReplyForm()
+            },
         )
 
 
