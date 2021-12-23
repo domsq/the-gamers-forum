@@ -1,7 +1,7 @@
 /* Styling for header, footer and nav */
 
 .header-bg {
-    background: #006473 url('/static/images/mobo.jpg') 48%;
+    background: #006473;
 }
 
 .navbar-brand {
