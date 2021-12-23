@@ -25,11 +25,11 @@
         </div>
         {% if user == post.creator %}
         <div class="btn btn-sm d-inline-block main-btn ms-3">
-            <a href="{% url 'edit_post' post.id %}">Edit</a>
+            <a href="{% url 'edit_post' post.id %}">Edit  <i class="fas fa-pen"></i></a>
         </div>
         <!-- Modal trigger button -->
         <button type="button" class="btn btn-sm main-btn ms-2" data-bs-toggle="modal" data-bs-target="#deleteModal">
-            Delete
+            Delete  <i class="far fa-trash-alt"></i>
         </button>        
         {% else %}
 
