@@ -2,15 +2,40 @@
 
 The Gamer's Forum is a website for gamers of all creeds (console, PC or mobile) to discuss all things video gaming. The website is divided up into different gaming related topics, under which posts can be created and users can also then reply to any post that they would like to either add to or express an opinion on. Only registered users are able to add posts or replies. Owners of posts are also able to edit and delete their posts. There is also a contact form should a user need to send a message to admin for whatever reason.
 
+![Image of application pages on different screen sizes](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/am_i_responsive.JPG)
+
+[Link to deployed site](https://the-gamers-forum.herokuapp.com/)
+
 ## UX
 
 ### Imagery
 
+My application doesn't feature any imagery as such, however it does make use of Font Awesome icons where needed to add a bit of visual enhancement. 
+
 ### Typography
+
+The fonts used for my website are "Audiowide" for the site name "The Gamer's Forum" and then "Merriweather" for all other text on the site. 
 
 ### Colour scheme
 
+The colour scheme on my site features darker blue and green colours as follows:
+
+#006473 - Used for the header background and also main button colour<br>
+#2F4858 - Used for the footer background and also darker coloured fonts<br>
+#FDDE6C - Used for the site name "The Gamer's Forum", as seen in the header<br>
+#81AD36 - Used for a hover colour for links and some lighter coloured text<br>
+#FFEFCA - Used for the background on the topic overview cards on the homepage<br>
+#299A5E - Used a hover font colour for the topic overview cards on the homepage<br>
+"whitesmoke" - Used for light coloured text where needed<br>
+
 ### Schema
+
+Please see below an overview of the schema for my application:
+
+![Image of schema overview](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/schema.JPG)<br><br>
+
+
+
 
 ### Wireframes
 
