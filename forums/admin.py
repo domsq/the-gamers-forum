@@ -13,8 +13,8 @@ class TopicAdmin(admin.ModelAdmin):
 class PostAdmin(admin.ModelAdmin):
     """Admin view for Posts"""
     list_display = ('title', 'slug', 'created', 'creator')
-    search_fields = ('title', 'body', 'creator')
-    list_filter = ('creator', 'created')
+    search_fields = ('title', 'body', 'creator__username')
+    list_filter = ('creator__username', 'created')
     prepopulated_fields = {'slug': ('title',)}
 
 
@@ -22,5 +22,5 @@ class PostAdmin(admin.ModelAdmin):
 class ReplyAdmin(admin.ModelAdmin):
     """Admin view for Replies"""
     list_display = ('post', 'created', 'creator')
-    search_fields = ('body', 'creator')
-    list_filter = ('creator', 'created')
+    search_fields = ('body', 'creator__username')
+    list_filter = ('creator__username', 'created')
