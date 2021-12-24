@@ -20,24 +20,50 @@ The fonts used for my website are "Audiowide" for the site name "The Gamer's For
 
 The colour scheme on my site features darker blue and green colours as follows:
 
-#006473 - Used for the header background and also main button colour<br>
-#2F4858 - Used for the footer background and also darker coloured fonts<br>
-#FDDE6C - Used for the site name "The Gamer's Forum", as seen in the header<br>
-#81AD36 - Used for a hover colour for links and some lighter coloured text<br>
-#FFEFCA - Used for the background on the topic overview cards on the homepage<br>
-#299A5E - Used a hover font colour for the topic overview cards on the homepage<br>
-"whitesmoke" - Used for light coloured text where needed<br>
+![Image of #006473](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/#006473.JPG) - Used for the header background and also main button colour<br>
+![Image of #2F4858](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/#2f4858.JPG) - Used for the footer background and also darker coloured fonts<br>
+![Image of #FDDE6C](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/#fdde6c.JPG) - Used for the site name "The Gamer's Forum", as seen in the header<br>
+![Image of #81AD36](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/#81ad36.JPG) - Used for a hover colour for links and some lighter coloured text<br>
+![Image of #FFEFCA](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/#ffefca.JPG) - Used for the background on the topic overview cards on the homepage<br>
+![Image of #299A5E](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/#299a5e.JPG)  - Used a hover font colour for the topic overview cards on the homepage<br>
+![Image of "whitesmoke"](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/whitesmoke.JPG) - Used for light coloured text where needed<br>
 
 ### Schema
 
 Please see below an overview of the schema for my application:
 
-![Image of schema overview](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/schema.JPG)<br><br>
+![Image of schema overview](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/schema.JPG)<br>
 
+The details of each schema is as follows:
 
-
+- Topic table
+![Image of topic schema](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/topic_schema.JPG)
+- Post table
+![Image of post schema](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/post_schema.JPG)
+- Reply table
+![Image of reply schema](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/reply_schema.JPG)
+- Contact table
+![Image of contact schema](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/contact_schema.JPG)<br><br>
+As can be seen above, the builtin Django user table as well as the topic, post and reply tables are all linked so that if a user is removed from the system, all of their associated posts and replies would be removed too. Like-wise, if a topic was removed, all associated posts and replies would be too. The contact table is standalone and used only for the Contact Us function.
 
 ### Wireframes
+
+Please see below the desktop view wireframes for my application:
+
+![Wireframe of homepage](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/wireframes/wireframe_home.JPG)<br>
+![Wireframe of topic detail page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/wireframes/wireframe_topic_detail.JPG)<br>
+![Wireframe of post detail page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/wireframes/wireframe_post_detail.JPG)<br>
+![Wireframe of login page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/wireframes/wireframe_login.JPG)<br>
+![Wireframe of logout page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/wireframes/wireframe_logout.JPG)<br>
+![Wireframe of signup page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/wireframes/wireframe_signup.JPG)<br>
+![Wireframe of add post page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/wireframes/wireframe_add_post.JPG)<br>
+![Wireframe of contact us page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/wireframes/wireframe_contact_us.JPG)<br>
+
+To see all the wireframes, including those for mobile and tablet as well, link is as follows:
+
+[Link to all wireframes](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/pp4_wireframes.pdf)<br>
+
+As can be seen, the final design of my application differs slightly from the wireframes. This is due to further discussion with my mentor as the project went on, as well as other design tweak choices.
 
 ### User Stories:
 
