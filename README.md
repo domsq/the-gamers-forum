@@ -262,16 +262,16 @@ Any site user, logged in or not, can click on the "Contact Us" nav link to visit
 - As a site admin I can manage topics so that I can add to, modify or remove them<br><br>
 A site admin would login via the admin link (https://the-gamers-forum.herokuapp.com/admin) and then access the admin panel:<br>
 ![Image of admin login page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_login.JPG)<br>
-![Image of admin panel with topics page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel_topics.JPG)<br>
+![Image of admin panel with topics page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel_topics.jpg)<br>
 - As a site admin I can remove posts if they breach community rules<br><br>
 A site admin would be able to do this from the admin panel:<br>
-![Image of admin panel with posts page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel_posts.JPG)<br>
+![Image of admin panel with posts page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel_posts.jpg)<br>
 - As a site admin I can remove replies to posts if they breach community rules<br><br>
 A site admin would be able to do this from the admin panel:<br>
-![Image of admin panel with replies page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel_replies.JPG)<br>
+![Image of admin panel with replies page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel_replies.jpg)<br>
 - As a site admin I can remove users if they breach community rules<br><br>
 A site admin would be able to do this from the admin panel:<br>
-![Image of admin panel with users page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel_users.JPG)<br>
+![Image of admin panel with users page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel_users.jpg)<br>
 
 The application has been tested using the Chrome, Edge and Firefox browsers at full width on a 1080p and 4K monitor, as well as a Samsung Galaxy S20 FE 5G handset. The following emulated device sizes were checked:<br>
 <br>
