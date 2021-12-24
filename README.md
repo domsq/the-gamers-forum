@@ -20,12 +20,12 @@ The fonts used for my website are "Audiowide" for the site name "The Gamer's For
 
 The colour scheme on my site features darker blue and green colours as follows:
 
-![Image of #006473](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/#006473.JPG) - Used for the header background and also main button colour<br>
-![Image of #2F4858](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/#2f4858.JPG) - Used for the footer background and also darker coloured fonts<br>
-![Image of #FDDE6C](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/#fdde6c.JPG) - Used for the site name "The Gamer's Forum", as seen in the header<br>
-![Image of #81AD36](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/#81ad36.JPG) - Used for a hover colour for links and some lighter coloured text<br>
-![Image of #FFEFCA](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/#ffefca.JPG) - Used for the background on the topic overview cards on the homepage<br>
-![Image of #299A5E](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/#299a5e.JPG)  - Used a hover font colour for the topic overview cards on the homepage<br>
+![Image of #006473](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/006473.JPG) - Used for the header background and also main button colour<br>
+![Image of #2F4858](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/2f4858.JPG) - Used for the footer background and also darker coloured fonts<br>
+![Image of #FDDE6C](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/fdde6c.JPG) - Used for the site name "The Gamer's Forum", as seen in the header<br>
+![Image of #81AD36](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/81ad36.JPG) - Used for a hover colour for links and some lighter coloured text<br>
+![Image of #FFEFCA](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/ffefca.JPG) - Used for the background on the topic overview cards on the homepage<br>
+![Image of #299A5E](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/299a5e.JPG)  - Used a hover font colour for the topic overview cards on the homepage<br>
 ![Image of "whitesmoke"](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/whitesmoke.JPG) - Used for light coloured text where needed<br>
 
 ### Schema
@@ -36,34 +36,44 @@ Please see below an overview of the schema for my application:
 
 The details of each schema is as follows:
 
-- Topic table
+- Topic table<br>
 ![Image of topic schema](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/topic_schema.JPG)
-- Post table
+- Post table<br>
 ![Image of post schema](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/post_schema.JPG)
-- Reply table
+- Reply table<br>
 ![Image of reply schema](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/reply_schema.JPG)
-- Contact table
-![Image of contact schema](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/contact_schema.JPG)<br><br>
-As can be seen above, the builtin Django user table as well as the topic, post and reply tables are all linked so that if a user is removed from the system, all of their associated posts and replies would be removed too. Like-wise, if a topic was removed, all associated posts and replies would be too. The contact table is standalone and used only for the Contact Us function.
+- Contact table<br>
+![Image of contact schema](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/contact_schema.JPG)<br>
+As can be seen above, the builtin Django user table as well as the topic, post and reply tables are all linked so that if a user is removed from the system, all of their associated posts and replies would be removed too.<br>
+Like-wise, if a topic was removed, all associated posts and replies would be too. Also, removing a post deletes all associated replies. The contact table is standalone and used only for the Contact Us function.
 
 ### Wireframes
 
 Please see below the desktop view wireframes for my application:
 
+Homepage:<br>
 ![Wireframe of homepage](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/wireframes/wireframe_home.JPG)<br>
+Topic detail page:<br>
 ![Wireframe of topic detail page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/wireframes/wireframe_topic_detail.JPG)<br>
+Post detail page:<br>
 ![Wireframe of post detail page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/wireframes/wireframe_post_detail.JPG)<br>
+Login page:<br>
 ![Wireframe of login page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/wireframes/wireframe_login.JPG)<br>
+Logout page:<br>
 ![Wireframe of logout page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/wireframes/wireframe_logout.JPG)<br>
+Sign up page:<br>
 ![Wireframe of signup page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/wireframes/wireframe_signup.JPG)<br>
+Post add page:<br>
 ![Wireframe of add post page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/wireframes/wireframe_add_post.JPG)<br>
+Contact us page:<br>
 ![Wireframe of contact us page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/wireframes/wireframe_contact_us.JPG)<br>
 
 To see all the wireframes, including those for mobile and tablet as well, link is as follows:
 
 [Link to all wireframes](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/pp4_wireframes.pdf)<br>
 
-As can be seen, the final design of my application differs slightly from the wireframes. This is due to further discussion with my mentor as the project went on, as well as other design tweak choices.
+As can be seen, the final design of my application differs slightly from the wireframes. This is due to further discussion with my mentor as the project went on, as well as other design tweak choices.<br>
+An example would be with the mobile homepage view, the topic card elements all run the full width of the screen in the final version, instead of being in a 3 x 2 grid layout. 
 
 ### User Stories:
 
@@ -100,7 +110,78 @@ As can be seen, the final design of my application differs slightly from the wir
 
 ### Existing Features
 
+The application features a header containg a nav element which is responsive and collapes for narrower viewports; you would see a "hamburger" icon to the right of the nav element, with the nav links below that, if viewed on a smaller screen:
+
+![Image of header](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/header.JPG)<br>
+
+The homepage features an overview of topics to select from as well as some of the most recent posts:
+
+![Image of homepage](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/homepage.JPG)<br>
+
+There is a footer containing links to social media pages:
+
+![Image of footer](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/footer.JPG)<br>
+
+There is a login page:
+
+![Image of login page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/login.JPG)<br>
+
+There is a logout page:
+
+![Image of logout page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/logout.JPG)<br>
+
+There is also a sign up page:
+
+![Image of sign up page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/signup.JPG)<br>
+
+Clicking on a topic reveals the detail page for that topic:
+
+![Image of topic detail page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/topic_detail.JPG)<br>
+
+There is a page to add a new post (only visible to logged in users):
+
+![Image of post add page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/add_post.JPG)<br>
+
+When adding a post, there are messages to show whether this has been successful or not:
+
+![Image of post add success message](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/post_add_success.JPG)<br>
+![Image of post add failure message](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/post_add_failure.JPG)<br>
+
+Clicking on a post shows the post detail view, which also allows for replying to a post (only logged in users can reply):
+
+![Image of topic detail page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/post_detail.JPG)<br>
+
+If a logged in user replies to a post, there is a confirmation:
+
+![Image of post reply confirmation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/reply_add_confirmation.JPG)<br>
+
+If a user is the owner of a post, they will also see "Edit" and "Delete" buttons below the post:
+
+![Image of edit and delete buttons](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/edit_delete.JPG)<br>
+
+There is a page for editing of existing posts:
+
+![Image of post edit page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/edit_post.JPG)<br>
+
+When editing a post, there are messages to show whether this has been successful or not:
+
+![Image of post edit success message](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/post_edit_success.JPG)<br>
+![Image of post edit failure message](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/post_edit_failure.JPG)<br>
+
+If a user chooses to delete one of their posts, there is an "are you sure" modal and then confirmation message:
+
+![Image of post delete modal](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/delete_post.JPG)<br>
+![Image of post delete confirmation message](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/post_delete_confirmation.JPG)<br>
+
+Finally, there is a contact us page for any user (logged in or not) to submit a message to admin:
+
+![Image of contact us page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/contact_us.JPG)<br>
+
 ### Features Left to Implement
+
+- Allow users to upload images for their posts or replies
+- Allow users to upvote \ downvote posts
+- Add a function allowing users to flag posts or replies to admin for review
 
 ## Technologies Used
 
