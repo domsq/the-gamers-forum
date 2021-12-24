@@ -224,46 +224,46 @@ Finally, there is a contact us page for any user (logged in or not) to submit a 
 The user will land on the homepage when visting the site and can click on any of the topics to view them in more detail:
 ![Image of homepage](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/homepage.JPG)<br>
 ![Image of topic detail page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/topic_detail.JPG)<br>
-- As a site user I can register an account to be able to use features reserved for site members<br>
+- As a site user I can register an account to be able to use features reserved for site members<br><br>
 There is a link in the nav element for "Sign Up" that takes the user to a page where they can sign up:<br>
 ![Image of sign up page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/signup.JPG)<br>
-- As a site user I can log into the website so that I can participate in the community fully<br>
+- As a site user I can log into the website so that I can participate in the community fully<br><br>
 From the nav element, the user clicks "Login" to be taken to the login page:<br>
 ![Image of login page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/login.JPG)<br>
-- As a site user I can log out of my account so that it remains secure if the site is visited from a shared PC for instance
+- As a site user I can log out of my account so that it remains secure if the site is visited from a shared PC for instance<br><br>
 The user would click "Logout" on the nav element to navigate to the logout page:<br>
 ![Image of logout page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/logout.JPG)<br>
-- As a site user I can view posts in detail to be able to read them fully<br>
+- As a site user I can view posts in detail to be able to read them fully<br><br>
 From either the homepage or from within a topic detail screen, clicking on a post will show it in detail:<br>
 ![Image of post detail page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/post_detail.JPG)<br>
-- As a site user I can make new posts to ask questions or state an opinion<br>
+- As a site user I can make new posts to ask questions or state an opinion<br><br>
 When viewing a topic detail screen, a logged in user can click the "Add Post" button to add a new post:<br>
 ![Image of post add page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/add_post.JPG)<br>
-- As a site user I can edit my posts so that I can update them if needed<br>
+- As a site user I can edit my posts so that I can update them if needed<br><br>
 As the owner of a post, a user can click on the "Edit" button to visit the post update screen:<br>
 ![Image of edit and delete buttons](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/edit_delete.JPG)<br>
 ![Image of post edit page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/edit_post.JPG)<br>
-- As a site user I can delete my posts so that I can remove them if no longer needed<br>
+- As a site user I can delete my posts so that I can remove them if no longer needed<br><br>
 The owner of the post can click on the "Delete" button to bring up the delete post modal:<br>
 ![Image of edit and delete buttons](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/edit_delete.JPG)<br>
 ![Image of post delete modal](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/delete_post.JPG)<br>
-- As a site user I can post replies to existing posts so that I can express my opinion about them<br>
+- As a site user I can post replies to existing posts so that I can express my opinion about them<br><br>
 A logged in user will have the option to post a reply when on a post detail screen:<br>
 ![Image of post detail page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/post_detail.JPG)<br>
-- As a site user I can fill out a contact form if I wish to make site admin aware of issues or feedback<br>
+- As a site user I can fill out a contact form if I wish to make site admin aware of issues or feedback<br><br>
 Any site user, logged in or not, can click on the "Contact Us" nav link to visit the contact us page:<br>
 ![Image of contact us page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/contact_us.JPG)<br>
-- As a site admin I can manage topics so that I can add to, modify or remove them<br>
+- As a site admin I can manage topics so that I can add to, modify or remove them<br><br>
 A site admin would login via the admin link (https://the-gamers-forum.herokuapp.com/admin) and then access the admin panel:<br>
 ![Image of admin login page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_login.JPG)<br>
 ![Image of admin panel page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel.JPG)<br>
-- As a site admin I can remove posts if they breach community rules<br>
+- As a site admin I can remove posts if they breach community rules<br><br>
 A site admin would be able to do this from the admin panel:<br>
 ![Image of admin panel page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel.JPG)<br>
-- As a site admin I can remove replies to posts if they breach community rules<br>
+- As a site admin I can remove replies to posts if they breach community rules<br><br>
 A site admin would be able to do this from the admin panel:<br>
 ![Image of admin panel page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel.JPG)<br>
-- As a site admin I can remove users if they breach community rules<br>
+- As a site admin I can remove users if they breach community rules<br><br>
 A site admin would be able to do this from the admin panel:<br>
 ![Image of admin panel page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel.JPG)<br>
 
@@ -362,7 +362,8 @@ File validates without any issues:<br>
 
 - Python<br>
 All python files tested conform to PEP8 standards:<br><br>
-    - Forums app:<br>
+
+- Forums app:<br>
 admin.py:<br>
 ![Image of forums admin file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/admin_py_forums_validation.JPG)<br>
 forms.py:<br>
@@ -375,7 +376,8 @@ views.py:<br>
 ![Image of forums views file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/views_py_forums_validation.JPG)<br>
 <br>
 
-    - contactus app:<br>
+
+- contactus app:<br>
 admin.py:<br>
 ![Image of contactus admin file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/admin_py_contactus_validation.JPG)<br>
 forms.py:<br>
@@ -391,11 +393,53 @@ views.py:<br>
 
 ## Deployment
 
+### Initial deployment
+
+- Gitpod
+    - Create new repository from CI template
+    - Install Django and required dependencies into Gitpod workspace
+    - Create new Django project called "gamersforum"
+    - Create procfile as required
+    - Run "pip3 freeze --local > requirements.txt" to update requirements file
+- Heroku
+    - Log into Heroku 
+    - Create new app called "the-gamers-forum"
+    - Add a PostgreSQL "hobby" database as resource
+    - Configure "DISABLE_COLLECTSTATIC = 1" in Config Vars
+- Gitpod
+    - Create env.py file and add database path from Heroku
+    - Add secret key to env.py
+    - Configure database path and secret key in settings.py
+    - Perform commit and push to GitHub
+- Heroku 
+    - Under "the-gamers-forum" app, browse to Deploy
+    - Connect to Github, select appropriate repository
+    - Run Deploy
+    - Wait for confirmation that app has deployed
+
+### Final deployment
+
+- Gitpod
+    - Ensure all required files up-to-date and that application is working
+    - Run "pip3 freeze --local > requirements.txt" to update requirements file
+    - Ensure "DEBUG = False" set in settings.py
+    - Perform commit and push to GitHub
+- Heroku
+    - Under "the-gamers-forum" app, browse to Config Vars
+    - Remove the value "DISABLE_COLLECTSTATIC = 1" from Config Vars
+    - Browse to Deploy and run deployment
+    - Wait for confirmation that app has deployed
+
+
 ## Credits 
 
 ### Content
 
+All content on the site was created by the developer.
+
 ### Media
+
+No media files were used in the development of my project, however Font Awesome icons were used for visual enhancement.
 
 ### Acknowledgements
 <br>
@@ -416,4 +460,6 @@ https://www.fullstackpython.com/django-contrib-auth-decorators-login-required-ex
 https://stackoverflow.com/questions/11890970/django-user-object-has-no-attribute-user/35480925<br>
 https://docs.djangoproject.com/en/4.0/topics/class-based-views/intro/<br>
 https://stackoverflow.com/questions/11754877/troubleshooting-related-field-has-invalid-lookup-icontains<br>
-https://stackoverflow.com/questions/21938028/how-can-i-get-a-favicon-to-show-up-in-my-django-app
+https://stackoverflow.com/questions/21938028/how-can-i-get-a-favicon-to-show-up-in-my-django-app<br><br>
+
+I would also like to thank my mentor Akshat Garg for all his help, as well as the community on Slack for their advice and guidance. 
