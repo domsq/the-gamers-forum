@@ -18,7 +18,7 @@ The fonts used for my website are "Audiowide" for the site name "The Gamer's For
 
 ### Colour scheme
 
-The colour scheme on my site features darker blue and green colours as follows:
+The colour scheme on my site mainly features darker blue and green colours as follows:
 
 ![Image of #006473](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/006473.JPG) - Used for the header background and also main button colour<br>
 ![Image of #2F4858](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/colours/2f4858.JPG) - Used for the footer background and also darker coloured fonts<br>
@@ -45,7 +45,7 @@ The details of each schema is as follows:
 - Contact table<br>
 ![Image of contact schema](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/contact_schema.JPG)<br>
 As can be seen above, the builtin Django user table as well as the topic, post and reply tables are all linked so that if a user is removed from the system, all of their associated posts and replies would be removed too.<br>
-Like-wise, if a topic was removed, all associated posts and replies would be too. Also, removing a post deletes all associated replies. The contact table is standalone and used only for the Contact Us function.
+Likewise, if a topic was removed, all associated posts and replies would be too. Also, removing a post deletes all associated replies. The contact table is standalone and used only for the Contact Us function.
 
 ### Wireframes
 
@@ -76,6 +76,12 @@ As can be seen, the final design of my application differs slightly from the wir
 An example would be with the mobile homepage view, the topic card elements all run the full width of the screen in the final version, instead of being in a 3 x 2 grid layout. 
 
 ### User Stories:
+
+The user stories for new users were derived from the following Epics:
+
+- As a site admin I can manage site content and users to ensure community rules are adhered to
+- As a site user I can view posts and replies so that I can find content of interest to me
+- As a site user I can post content so that I can express my opinion and feel included in the community
 
 #### New users:
 
@@ -215,7 +221,7 @@ Finally, there is a contact us page for any user (logged in or not) to submit a 
 
 ### Services
 
-- [Mycolor.space](https://mycolor.space/) - Used for working out colour palette
+- [Mycolor.space](https://mycolor.space/) - Used for deciding on colour palette
 - [favicon.io](https://favicon.io/favicon-generator/) - Used to generate favicon
 
 ## Testing
@@ -256,16 +262,16 @@ Any site user, logged in or not, can click on the "Contact Us" nav link to visit
 - As a site admin I can manage topics so that I can add to, modify or remove them<br><br>
 A site admin would login via the admin link (https://the-gamers-forum.herokuapp.com/admin) and then access the admin panel:<br>
 ![Image of admin login page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_login.JPG)<br>
-![Image of admin panel page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel.JPG)<br>
+![Image of admin panel with topics page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel_topics.JPG)<br>
 - As a site admin I can remove posts if they breach community rules<br><br>
 A site admin would be able to do this from the admin panel:<br>
-![Image of admin panel page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel.JPG)<br>
+![Image of admin panel with posts page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel_posts.JPG)<br>
 - As a site admin I can remove replies to posts if they breach community rules<br><br>
 A site admin would be able to do this from the admin panel:<br>
-![Image of admin panel page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel.JPG)<br>
+![Image of admin panel with replies page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel_replies.JPG)<br>
 - As a site admin I can remove users if they breach community rules<br><br>
 A site admin would be able to do this from the admin panel:<br>
-![Image of admin panel page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel.JPG)<br>
+![Image of admin panel with users page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel_users.JPG)<br>
 
 The application has been tested using the Chrome, Edge and Firefox browsers at full width on a 1080p and 4K monitor, as well as a Samsung Galaxy S20 FE 5G handset. The following emulated device sizes were checked:<br>
 <br>
@@ -294,6 +300,7 @@ In all cases, the application behaved as expected. I have tested and confirmed t
 - When logged out, the nav links show "Home \ Login \ Sign Up \ Contact Us"
 - Only the owner of a post, when logged in, can see the "Edit" and "Delete" buttons for their post
 - Adding a new post via the add post screen works as expected
+- Adding a reply to a post works as expected
 - Editing a post works as expected
 - Deleting a post works as expected
 - Submitting a message via the Contact Us page functions as expected
@@ -315,11 +322,11 @@ While developing my application, the following bugs arose:
 - Topic detail view not working
     - When configuring the URL for the topic detail view, I incorrectly set the url path to '<name:name>/' which is of course invalid. Once set to '<str:name>/' this worked as expected.
 - Footer obscuring content
-    - The footer was hiding content behind it, so I implemented a fix which was to create an empty div and size accordingly and set the "clear" property to both. I have also since removed the "fixed" property from the footer which now behaves as it should. 
+    - The footer was hiding content behind it, so I implemented a fix which was to create an empty div and size accordingly and set the "clear" property to "both" for the div. I have also since removed the "fixed" property from the footer which now behaves as it should. 
 - PostEdit view post method not working
     - While adding the post method to the "PostEdit" view, I mistakenly set the form variable to "PostAddForm(data=request.POST)" which would instead try to create a new record. Once amended to "PostAddForm(request.POST, instance=post)" this worked as expected. 
 - Authentication checks in views causing errors
-    - When adding the authentication checks to the views, in addition to what I've already configured on the templates, this initially caused issues due to me trying to decorate methods as if they were functions... this was corrected by using the "@method_decorator(login_required, name='post')" decorator on the required classes.
+    - When adding the authentication checks to the views, in addition to what I'd already configured on the templates, this initially caused issues due to me trying to decorate methods as if they were functions... this was corrected by using the "@method_decorator(login_required, name='post')" decorator on the required classes.
 - Filter and search fields in admin view not working
     - I configured foreignkey fields in the admin view for the forums app, when initially searching on these, it would crash. This was corrected by adding "__username" to the relevant search and filter fields. 
 
@@ -409,7 +416,7 @@ views.py:<br>
 - Gitpod
     - Create env.py file and add database path from Heroku
     - Add secret key to env.py
-    - Configure database path and secret key in settings.py
+    - Configure database path and secret key in settings.py to be read from environment variables
     - Perform commit and push to GitHub
 - Heroku 
     - Under "the-gamers-forum" app, browse to Deploy
