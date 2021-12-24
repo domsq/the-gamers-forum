@@ -149,7 +149,7 @@ When adding a post, there are messages to show whether this has been successful 
 
 Clicking on a post shows the post detail view, which also allows for replying to a post (only logged in users can reply):
 
-![Image of topic detail page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/post_detail.JPG)<br>
+![Image of post detail page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/post_detail.JPG)<br>
 
 If a logged in user replies to a post, there is a confirmation:
 
@@ -216,8 +216,178 @@ Finally, there is a contact us page for any user (logged in or not) to submit a 
 ### Services
 
 - [Mycolor.space](https://mycolor.space/) - Used for working out colour palette
+- [favicon.io](https://favicon.io/favicon-generator/) - Used to generate favicon
 
 ## Testing
+
+- As a site user I can view topics to find related posts<br><br> 
+The user will land on the homepage when visting the site and can click on any of the topics to view them in more detail:
+![Image of homepage](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/homepage.JPG)<br>
+![Image of topic detail page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/topic_detail.JPG)<br>
+- As a site user I can register an account to be able to use features reserved for site members<br>
+There is a link in the nav element for "Sign Up" that takes the user to a page where they can sign up:<br>
+![Image of sign up page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/signup.JPG)<br>
+- As a site user I can log into the website so that I can participate in the community fully<br>
+From the nav element, the user clicks "Login" to be taken to the login page:<br>
+![Image of login page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/login.JPG)<br>
+- As a site user I can log out of my account so that it remains secure if the site is visited from a shared PC for instance
+The user would click "Logout" on the nav element to navigate to the logout page:<br>
+![Image of logout page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/logout.JPG)<br>
+- As a site user I can view posts in detail to be able to read them fully<br>
+From either the homepage or from within a topic detail screen, clicking on a post will show it in detail:<br>
+![Image of post detail page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/post_detail.JPG)<br>
+- As a site user I can make new posts to ask questions or state an opinion<br>
+When viewing a topic detail screen, a logged in user can click the "Add Post" button to add a new post:<br>
+![Image of post add page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/add_post.JPG)<br>
+- As a site user I can edit my posts so that I can update them if needed<br>
+As the owner of a post, a user can click on the "Edit" button to visit the post update screen:<br>
+![Image of edit and delete buttons](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/edit_delete.JPG)<br>
+![Image of post edit page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/edit_post.JPG)<br>
+- As a site user I can delete my posts so that I can remove them if no longer needed<br>
+The owner of the post can click on the "Delete" button to bring up the delete post modal:<br>
+![Image of edit and delete buttons](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/edit_delete.JPG)<br>
+![Image of post delete modal](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/delete_post.JPG)<br>
+- As a site user I can post replies to existing posts so that I can express my opinion about them<br>
+A logged in user will have the option to post a reply when on a post detail screen:<br>
+![Image of post detail page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/post_detail.JPG)<br>
+- As a site user I can fill out a contact form if I wish to make site admin aware of issues or feedback<br>
+Any site user, logged in or not, can click on the "Contact Us" nav link to visit the contact us page:<br>
+![Image of contact us page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/contact_us.JPG)<br>
+- As a site admin I can manage topics so that I can add to, modify or remove them<br>
+A site admin would login via the admin link (https://the-gamers-forum.herokuapp.com/admin) and then access the admin panel:<br>
+![Image of admin login page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_login.JPG)<br>
+![Image of admin panel page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel.JPG)<br>
+- As a site admin I can remove posts if they breach community rules<br>
+A site admin would be able to do this from the admin panel:<br>
+![Image of admin panel page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel.JPG)<br>
+- As a site admin I can remove replies to posts if they breach community rules<br>
+A site admin would be able to do this from the admin panel:<br>
+![Image of admin panel page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel.JPG)<br>
+- As a site admin I can remove users if they breach community rules<br>
+A site admin would be able to do this from the admin panel:<br>
+![Image of admin panel page](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/features/admin_panel.JPG)<br>
+
+The application has been tested using the Chrome, Edge and Firefox browsers at full width on a 1080p and 4K monitor, as well as a Samsung Galaxy S20 FE 5G handset. The following emulated device sizes were checked:<br>
+<br>
+
+- Chrome \ Edge
+    - Galaxy S5
+    - Pixel 2 XL
+    - iPhone 6/7/8
+    - iPhone X
+    - iPad
+    - iPad Pro
+- Firefox
+    - Galaxy S10/S10+
+    - Galaxy S20 Ultra
+    - iPad
+    - iPhone 11 Pro
+    - iPhone 12/13 +
+    - iPhone SE 2nd gen
+
+In all cases, the application behaved as expected. I have tested and confirmed that the following functionality works:
+
+- Clicking on a topic overview from the homepage takes you to a topic detail view
+- Clicking on a post overview from either the homepage or under a topic detail view opens the post detail view
+- Only logged in users can see the "Add Post" button or reply to a comment
+- When logged in, the nav links will only show "Home \ Logout \ Contact Us" 
+- When logged out, the nav links show "Home \ Login \ Sign Up \ Contact Us"
+- Only the owner of a post, when logged in, can see the "Edit" and "Delete" buttons for their post
+- Adding a new post via the add post screen works as expected
+- Editing a post works as expected
+- Deleting a post works as expected
+- Submitting a message via the Contact Us page functions as expected
+- An admin user can manage users, topics, posts and replies from the admin panel
+
+### Bugs
+
+While developing my application, the following bugs arose:
+
+<strong>Solved:</strong>
+<br> 
+
+- Static files not loading
+    - When initially creating base.html, I forgot to include {% load static %} at the top so got an error when trying to link to static files. This was corrected by adding the right syntax. 
+- Link to database not working
+    - During development, Heroku updated the DB path following some maintenance and so I initially couldn't connect to the DB from my development environment following this. Once the path was updated in my application, the issue was resolved.
+- Account view templates not working
+    - While creating the templates for the allauth views, I accidentally created the template folder as "templates/accounts", which won't work... I renamed this to "templates/account" and all worked as expected.
+- Topic detail view not working
+    - When configuring the URL for the topic detail view, I incorrectly set the url path to '<name:name>/' which is of course invalid. Once set to '<str:name>/' this worked as expected.
+- Footer obscuring content
+    - The footer was hiding content behind it, so I implemented a fix which was to create an empty div and size accordingly and set the "clear" property to both. I have also since removed the "fixed" property from the footer which now behaves as it should. 
+- PostEdit view post method not working
+    - While adding the post method to the "PostEdit" view, I mistakenly set the form variable to "PostAddForm(data=request.POST)" which would instead try to create a new record. Once amended to "PostAddForm(request.POST, instance=post)" this worked as expected. 
+- Authentication checks in views causing errors
+    - When adding the authentication checks to the views, in addition to what I've already configured on the templates, this initially caused issues due to me trying to decorate methods as if they were functions... this was corrected by using the "@method_decorator(login_required, name='post')" decorator on the required classes.
+- Filter and search fields in admin view not working
+    - I configured foreignkey fields in the admin view for the forums app, when initially searching on these, it would crash. This was corrected by adding "__username" to the relevant search and filter fields. 
+
+<strong>Not solved:</strong>  
+<br>
+
+- Unsuccessful post edit temporarily shows incorrect post details
+    - If unsuccessful at editing a post, when it redirects to post detail it shows what the post would've looked like had the edit worked (presumably taken from the form). If you then attempt to edit again or navigate away and come back to the post, it shows as it should. I was unable to resolve this bug prior to submission and would need to revisit it at a later date. 
+
+### Validator testing
+
+- HTML<br>
+All template files validate correctly with no errors:<br><br>
+index.html:<br>
+![Image of index file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/index_html_validation.JPG)<br>
+topic_detail.html:<br>
+![Image of topic detail file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/topic_detail_html_validation.JPG)<br>
+post_detail.html:<br>
+![Image of post detail file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/post_detail_html_validation.JPG)<br>
+add_post.html:<br>
+![Image of add post file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/add_post_html_validation.JPG)<br>
+edit_post.html:<br>
+![Image of edit post file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/edit_post_html_validation.JPG)<br>
+login.html:<br>
+![Image of login file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/login_html_validation.JPG)<br>
+logout.html:<br>
+![Image of logout file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/logout_html_validation.JPG)<br>
+signup.html:<br>
+![Image of signup file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/signup_html_validation.JPG)<br>
+contactus.html:<br>
+![Image of contact us file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/contact_us_html_validation.JPG)<br>
+<br>
+<br>
+
+- CSS<br>
+File validates without any issues:<br>
+
+![Image of css file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/style_css_validation.JPG)<br>
+<br>
+
+- Python<br>
+All python files tested conform to PEP8 standards:<br><br>
+    - Forums app:<br>
+admin.py:<br>
+![Image of forums admin file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/admin_py_forums_validation.JPG)<br>
+forms.py:<br>
+![Image of forums forms file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/forms_py_forums_validation.JPG)<br>
+models.py:<br>
+![Image of forums model file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/models_py_forums_validation.JPG)<br>
+urls.py:<br>
+![Image of forums urls file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/urls_py_forums_validation.JPG)<br>
+views.py:<br>
+![Image of forums views file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/views_py_forums_validation.JPG)<br>
+<br>
+
+    - contactus app:<br>
+admin.py:<br>
+![Image of contactus admin file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/admin_py_contactus_validation.JPG)<br>
+forms.py:<br>
+![Image of contactus forms file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/forms_py_contactus_validation.JPG)<br>
+models.py:<br>
+![Image of contactus model file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/models_py_contactus_validation.JPG)<br>
+urls.py:<br>
+![Image of contactus urls file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/urls_py_contactus_validation.JPG)<br>
+views.py:<br>
+![Image of contactus views file validation](https://raw.githubusercontent.com/domsq/the-gamers-forum/master/screenshots/validation/views_py_contactus_validation.JPG)<br>
+
+
 
 ## Deployment
 
@@ -240,4 +410,10 @@ https://stackoverflow.com/questions/13881548/sticky-footer-hiding-content<br>
 https://docs.djangoproject.com/en/4.0/topics/forms/modelforms/<br>
 https://stackhowto.com/python-generate-a-random-alphanumeric-string/<br>
 https://www.w3schools.com/cssref/css3_pr_text-shadow.asp<br>
-https://stackoverflow.com/questions/40506827/django-how-to-allow-only-the-owner-of-a-new-post-to-edit-or-delete-the-post
+https://stackoverflow.com/questions/40506827/django-how-to-allow-only-the-owner-of-a-new-post-to-edit-or-delete-the-post<br>
+https://towardsdatascience.com/decorating-methods-defined-in-a-class-with-python-4b361589440<br>
+https://www.fullstackpython.com/django-contrib-auth-decorators-login-required-examples.html<br>
+https://stackoverflow.com/questions/11890970/django-user-object-has-no-attribute-user/35480925<br>
+https://docs.djangoproject.com/en/4.0/topics/class-based-views/intro/<br>
+https://stackoverflow.com/questions/11754877/troubleshooting-related-field-has-invalid-lookup-icontains<br>
+https://stackoverflow.com/questions/21938028/how-can-i-get-a-favicon-to-show-up-in-my-django-app
